@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Plus, LinkIcon, Tag, Settings } from "lucide-react";
+import { Plus, LinkIcon, Tag } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const categories = [

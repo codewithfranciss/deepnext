@@ -3,7 +3,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/shared/AppSiderbar";
-import { Footer } from "@/components/shared/Footer"; // 👈 import your Footer
+import { Footer } from "@/components/shared/Footer"; 
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,15 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="flex min-h-screen">
             {/* Sidebar */}
             <AppSidebar />
-
-            {/* Main content layout */}
             <div className="flex flex-col flex-1">
-              {/* Page content */}
               <main className="flex-1 overflow-hidden">
                 {children}
               </main>
-
-              {/* Footer */}
               <Footer />
             </div>
           </div>

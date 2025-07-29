@@ -57,7 +57,7 @@ const Latest = () => {
     <div className="min-h-screen flex w-full bg-background">
       <div className="flex-1 flex flex-col">
         {/* Header */}
-        <header className=" flex items-center justify-between py-6  sm:px-4 md:px-6 border-b border-border bg-card/50 backdrop-blur-sm sticky">
+        <header className=" flex items-center justify-between py-[18px]  sm:px-4 md:px-6 border-b border-border bg-card/50 backdrop-blur-sm sticky">
           <div className="flex items-center ml-6  gap-2 sm:gap-4">
             <SidebarTrigger className="text-muted-foreground hover:text-foreground transition-colors" />
             <h2 className="text-base sm:text-lg font-semibold text-foreground">Latest</h2>
