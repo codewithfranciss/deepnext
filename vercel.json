@@ -2,7 +2,7 @@
     "redirects": [
       {
         "source": "/",
-        "destination": "/waitlist",
+        "destination": "/content/latest",
         "permanent": false
       }
     ]
