@@ -56,36 +56,36 @@ const Latest = () => {
   return (
     <div className="min-h-screen flex w-full bg-background">
       <div className="flex-1 flex flex-col">
-        {/* Header */}
-        <header className=" flex items-center justify-between py-[18px]  sm:px-4 md:px-6 border-b border-border bg-card/50 backdrop-blur-sm sticky">
-          <div className="flex items-center ml-6  gap-2 sm:gap-4">
+        {/* Header - Fixed backdrop blur and consistent spacing */}
+        <header className="flex items-center justify-between py-[18px] px-4 md:px-6 border-b border-border bg-card/50 sticky top-0 z-10">
+          <div className="flex items-center gap-3">
             <SidebarTrigger className="text-muted-foreground hover:text-foreground transition-colors" />
-            <h2 className="text-base sm:text-lg font-semibold text-foreground">Latest</h2>
+            <h2 className="text-lg font-semibold text-foreground">Latest</h2>
           </div>
           <SubmitButton />
         </header>
 
         {/* Main Content */}
-        <main className="flex-1 px-3 sm:px-4 md:px-6 py-4 md:py-6">
-          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
-            
-            {/* Page Title */}
-            <div className="mb-6 md:mb-8">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-2">
+        <main className="flex-1 px-4 md:px-6 py-6">
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="space-y-2">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
                 Latest Updates
               </h1>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-2xl">
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-2xl">
                 Stay updated with the newest developments in the React ecosystem and modern web development
               </p>
             </div>
-            <div className="mb-6 md:mb-8">
-              <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
-                <div className="flex gap-2 min-w-max">
+
+            {/* Tabs - Enhanced mobile scroll */}
+            <div className="relative">
+              <div className="overflow-x-auto scrollbar-hide">
+                <div className="flex gap-2 min-w-max pb-1">
                   {tabs.map((tab) => (
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
-                      className={`px-3 sm:px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                         activeTab === tab
                           ? "bg-primary text-primary-foreground shadow-sm"
                           : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
@@ -96,67 +96,70 @@ const Latest = () => {
                   ))}
                 </div>
               </div>
+              {/* Gradient fade for scroll indication */}
+              <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-background to-transparent pointer-events-none md:hidden" />
             </div>
 
-            {/* Articles Grid */}
-            <div className="space-y-3 md:space-y-4">
+            {/* Articles Grid - Improved mobile layout */}
+            <div className="space-y-4">
               {latestItems.map((item, index) => (
                 <Card 
                   key={index} 
-                  className="group border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 cursor-pointer overflow-hidden"
+                  className="group border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 cursor-pointer"
                 >
-                  <CardHeader className="pb-3 sm:pb-4">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-start gap-2 mb-2">
-                          <CardTitle className="text-lg sm:text-xl leading-tight group-hover:text-primary transition-colors duration-200 line-clamp-2">
-                            {item.title}
-                          </CardTitle>
-                          {item.trending && (
-                            <Badge 
-                              variant="secondary" 
-                              className="bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-400 dark:border-emerald-800 shrink-0"
-                            >
-                              <TrendingUp className="w-3 h-3 mr-1" />
-                              <span className="hidden sm:inline">Trending</span>
-                              <span className="sm:hidden">Hot</span>
-                            </Badge>
-                          )}
-                        </div>
-                        <CardDescription className="text-sm sm:text-base leading-relaxed line-clamp-2 sm:line-clamp-none">
-                          {item.description}
-                        </CardDescription>
+                  <CardHeader className="pb-3">
+                    <div className="space-y-3">
+                      {/* Title and trending badge */}
+                      <div className="flex items-start gap-2">
+                        <CardTitle className="text-lg md:text-xl leading-tight group-hover:text-primary transition-colors duration-200 flex-1">
+                          {item.title}
+                        </CardTitle>
+                        {item.trending && (
+                          <Badge 
+                            variant="secondary" 
+                            className="bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-400 dark:border-emerald-800 flex-shrink-0 text-xs"
+                          >
+                            <TrendingUp className="w-3 h-3 mr-1" />
+                            <span className="hidden xs:inline">Trending</span>
+                            <span className="xs:hidden">Hot</span>
+                          </Badge>
+                        )}
                       </div>
-                      <Badge variant="outline" className="shrink-0 self-start">
-                        {item.category}
-                      </Badge>
+                      
+                      {/* Description */}
+                      <CardDescription className="text-sm md:text-base leading-relaxed">
+                        {item.description}
+                      </CardDescription>
+                      <div className="flex justify-between items-center">
+                        <Badge variant="outline" className="text-xs">
+                          {item.category}
+                        </Badge>
+                      </div>
                     </div>
                   </CardHeader>
                   
                   <CardContent className="pt-0">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 text-xs sm:text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
-                          <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
-                          {item.time}
+                          <Clock className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                          <span>{item.time}</span>
                         </div>
                         <span className="hidden sm:inline">•</span>
                         <span className="hidden sm:inline">{item.readTime}</span>
                       </div>
                       
-                      <div className="flex items-center gap-1 text-xs sm:text-sm text-muted-foreground group-hover:text-primary transition-colors duration-200">
+                      <div className="flex items-center gap-1 text-xs md:text-sm text-muted-foreground group-hover:text-primary transition-colors duration-200">
                         <span className="hidden sm:inline">Read more</span>
-                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                        <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0" />
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
-
-            {/* Load More Button */}
-            <div className="flex justify-center pt-6 md:pt-8">
-              <button className="px-6 py-3 bg-muted hover:bg-muted/80 text-foreground rounded-lg font-medium transition-colors duration-200 hover:shadow-sm">
+            <div className="flex justify-center pt-6">
+              <button className="px-6 py-3 bg-muted hover:bg-muted/80 text-foreground rounded-lg font-medium transition-colors duration-200 hover:shadow-sm w-full sm:w-auto max-w-xs">
                 Load More
               </button>
             </div>
