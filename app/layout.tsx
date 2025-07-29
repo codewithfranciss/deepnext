@@ -1,10 +1,9 @@
 // app/layout.tsx
 import "./globals.css";
 import { Poppins } from "next/font/google";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/shared/AppSiderbar";
-import { Footer } from "@/components/shared/Footer"; 
-import { Toaster } from "@/components/ui/toaster";
+import { Footer } from "@/components/shared/Footer"; // 👈 import your Footer
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${poppins.variable} font-poppins bg-[#0e0e0e] text-white`}>
-        <SidebarProvider>
+        <SidebarProvider defaultOpen={true}>
           <div className="flex min-h-screen">
             {/* Sidebar */}
             <AppSidebar />
@@ -38,7 +37,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </SidebarProvider>
-        <Toaster />
       </body>
     </html>
   );

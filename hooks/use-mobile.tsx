@@ -1,5 +1,6 @@
+'use client'
 import * as React from "react"
-
+import { useState } from "react";
 const MOBILE_BREAKPOINT = 768
 
 export function useIsMobile() {
@@ -16,4 +17,12 @@ export function useIsMobile() {
   }, [])
 
   return !!isMobile
+}
+
+
+export function useSidebarToggle() {
+  const [open, setOpen] = useState(false);
+  const toggle = () => setOpen((prev) => !prev);
+  const close = () => setOpen(false);
+  return { open, toggle, close };
 }
