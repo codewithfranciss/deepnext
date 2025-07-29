@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Clock, TrendingUp, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { SubmitButton } from "@/components/submit /SubmitForm";
 
 const Latest = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -61,6 +62,7 @@ const Latest = () => {
             <SidebarTrigger className="text-muted-foreground hover:text-foreground transition-colors" />
             <h2 className="text-base sm:text-lg font-semibold text-foreground">Latest</h2>
           </div>
+          <SubmitButton />
         </header>
 
         {/* Main Content */}

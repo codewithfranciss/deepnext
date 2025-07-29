@@ -57,11 +57,11 @@ export function AppSidebar() {
           <h1 className="font-bold text-xl text-foreground">DeepReact</h1>
         </div>
 
-        <SidebarGroup className="px-3  py-10">
+        <SidebarGroup className="px-3 border-none py-10">
           <SidebarGroupContent>
-            <SidebarMenu className="space-y-1">
+            <SidebarMenu className="space-y-1 border-none">
               {sidebarItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
+                <SidebarMenuItem key={item.title} className="border-none">
                   <SidebarMenuButton
                     asChild={!item.disabled}
                     className={`
