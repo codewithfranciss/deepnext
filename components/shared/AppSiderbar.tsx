@@ -29,7 +29,7 @@ import { Badge } from "@/components/ui/badge"
 
 const sidebarItems = [
   { title: "Search", url: "/search", icon: Search, disabled: true, comingSoon: true },
-  { title: "Latest", url: "/latest", icon: Flame },
+  { title: "Latest", url: "/contents", icon: Flame },
   { title: "Jobs", url: "/jobs", icon: Briefcase },
   { title: "Tutorials", url: "/tutorials", icon: BookOpen },
   { title: "Quiz", url: "/quiz", icon: Brain, isNew: true },
@@ -57,7 +57,7 @@ export function AppSidebar() {
           <h1 className="font-bold text-xl text-foreground">DeepReact</h1>
         </div>
 
-        <SidebarGroup className="px-3 py-4">
+        <SidebarGroup className="px-3  py-10">
           <SidebarGroupContent>
             <SidebarMenu className="space-y-1">
               {sidebarItems.map((item) => (
