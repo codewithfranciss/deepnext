@@ -1,5 +1,4 @@
 "use client"
-import { useState } from "react";
 import { 
   Search, 
   Flame, 
@@ -13,25 +12,20 @@ import {
   Cloud, 
   Database, 
   FileText,
-  Settings,
-  BarChart3
 } from "lucide-react";
 import Link from "next/link"
-import { useRouter, usePathname } from "next/navigation";
-
+import { usePathname } from "next/navigation";
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
 import { Badge } from "@/components/ui/badge";
-
 const sidebarItems = [
   { title: "Search", url: "/search", icon: Search, disabled: true, comingSoon: true },
   { title: "Latest", url: "/latest", icon: Flame },
@@ -46,7 +40,6 @@ const sidebarItems = [
   { title: "Database", url: "/database", icon: Database },
   { title: "Docs", url: "/docs", icon: FileText },
 ];
-
 
 export function AppSidebar() {
   const { state } = useSidebar();
