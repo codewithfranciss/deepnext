@@ -7,8 +7,8 @@
 @layer base {
   :root {
     /* DeepReact Dark Theme */
-    --background: 0 0% 5.5%; 
-    --foreground: 0 0% 100%; 
+    --background: 0 0% 5.5%; /* #0e0e0e */
+    --foreground: 0 0% 100%; /* white */
 
     --card: 0 0% 7%; 
     --card-foreground: 0 0% 100%;
@@ -31,7 +31,7 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 14.9%; /* neutral-800 equivalent */
+    --border: 0 0% 14.9%; 
     --input: 0 0% 14.9%;
     --ring: 258 90% 66%;
 
@@ -54,9 +54,8 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
- 
-  body {
-
+    body {
+   
   }
 }
 
