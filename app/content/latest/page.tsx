@@ -78,8 +78,6 @@ const Latest = () => {
                 Stay updated with the newest developments in the React ecosystem and modern web development
               </p>
             </div>
-
-            {/* Tab Filter - Horizontal Scroll on Mobile */}
             <div className="mb-6 md:mb-8">
               <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-2">
                 <div className="flex gap-2 min-w-max">
