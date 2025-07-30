@@ -1,6 +1,6 @@
 
 import Filter from "@/components/shared/TabFIlters";
-import { LatestTabs } from "@/dummy/tabs";
+import { LatestTabs } from "@/data/tabs";
 import Header from "@/components/shared/Header";
 import LatestCard from "@/components/latest/LatestCards";
 

@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
-import jobs from "@/dummy/jobs"
+import jobs from "@/data/jobs"
 import { ExternalLink, MapPin, DollarSign, Clock, Building } from "lucide-react"
 import { Button } from "../ui/button"
 

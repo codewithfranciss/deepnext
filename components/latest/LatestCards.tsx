@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, TrendingUp, ArrowRight } from "lucide-react";
-import latestItems from "@/dummy/latest";
+import latestItems from "@/data/latest";
 export default function LatestCard(){
     return(
         <>

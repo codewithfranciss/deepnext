@@ -1,5 +1,5 @@
 
-import { JobsTabs } from "@/dummy/tabs"
+import { JobsTabs } from "@/data/tabs"
 import Header from "@/components/shared/Header"
 import JobCards from "@/components/jobs/JobCards"
 import Filter from "@/components/shared/TabFIlters"
