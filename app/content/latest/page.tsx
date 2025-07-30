@@ -68,19 +68,10 @@ const Latest = () => {
         {/* Main Content */}
         <main className="flex-1 px-4 md:px-6 py-6">
           <div className="max-w-4xl mx-auto space-y-6">
-            <div className="space-y-2">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-                Latest Updates
-              </h1>
-              <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-2xl">
-                Stay updated with the newest developments in the React ecosystem and modern web development
-              </p>
-            </div>
-
-            {/* Tabs - Enhanced mobile scroll */}
-            <div className="relative">
-              <div className="overflow-x-auto scrollbar-hide">
-                <div className="flex gap-2 min-w-max pb-1">
+                        {/* Tabs - Enhanced mobile scroll */}
+                        <div className="relative">
+              <div className="scrollbar-hide">
+                <div className="flex gap-2 flex-wrap my-2 pb-1">
                   {tabs.map((tab) => (
                     <button
                       key={tab}
@@ -88,7 +79,7 @@ const Latest = () => {
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
                         activeTab === tab
                           ? "bg-primary text-primary-foreground shadow-sm"
-                          : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
+                          : "bg-none font-black text-muted-foreground hover:bg-muted/80 hover:text-foreground"
                       }`}
                     >
                       {tab}
@@ -99,6 +90,16 @@ const Latest = () => {
               {/* Gradient fade for scroll indication */}
               <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-background to-transparent pointer-events-none md:hidden" />
             </div>
+            <div className="space-y-2">
+              <h1 className="text-xl lg:text-3xl font-bold text-foreground mb-2">
+                Latest Updates
+              </h1>
+              <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-2xl">
+                Stay updated with the newest developments in the React ecosystem and modern web development
+              </p>
+            </div>
+
+
 
             {/* Articles Grid - Improved mobile layout */}
             <div className="space-y-4">
