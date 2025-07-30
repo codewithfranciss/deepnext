@@ -1,7 +1,5 @@
 import { ToolCard } from "./ToolCard";
-
-
-
+import tools from "@/data/tool";
 export function ToolsGrid() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">

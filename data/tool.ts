@@ -36,3 +36,5 @@ const tools = [
       href: "https://pages.cloudflare.com"
     }
   ];
+
+  export default tools
