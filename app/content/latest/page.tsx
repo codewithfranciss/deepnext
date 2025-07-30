@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, TrendingUp, ArrowRight } from "lucide-react";
 import Filter from "@/components/shared/TabFIlters";
 import { LatestTabs } from "@/dummy/tabs";
-import { SubmitButton } from "@/components/submit /SubmitForm";
+import Header from "@/components/shared/Header";
 
 const Latest = () => {
 
@@ -57,15 +57,7 @@ const Latest = () => {
   return (
     <div className="min-h-screen flex w-full bg-background">
       <div className="flex-1 flex flex-col">
-        {/* Header - Fixed backdrop blur and consistent spacing */}
-        <header className="flex items-center justify-between py-[18px] px-4 md:px-6 border-b border-border bg-card/50 sticky top-0 z-10">
-          <div className="flex items-center gap-3">
-            <SidebarTrigger className="text-muted-foreground hover:text-foreground transition-colors" />
-            <h2 className="text-lg font-semibold text-foreground">Latest</h2>
-          </div>
-          <SubmitButton />
-        </header>
-
+        <Header title="Latest" />
         {/* Main Content */}
         <main className="flex-1 px-4 md:px-6 py-6">
           <div className="max-w-4xl mx-auto space-y-6">
