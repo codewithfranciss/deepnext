@@ -20,7 +20,6 @@ export default function Latest() {
                 Stay updated with the newest developments in the React ecosystem and modern web development
               </p>
             </div>
-
             <LatestCard />
           </div>
         </main>

@@ -14,7 +14,6 @@ export default function JobsPage() {
             </div>
           </div>
           <JobCards />
-
         </main>
       </div>
     )
