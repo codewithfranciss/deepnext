@@ -3,12 +3,13 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, TrendingUp, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import Filter from "@/components/shared/TabFIlters";
+import { LatestTabs } from "@/dummy/tabs";
 import { SubmitButton } from "@/components/submit /SubmitForm";
 
 const Latest = () => {
-  const [activeTab, setActiveTab] = useState("All");
-  const tabs = ["All", "Articles", "Videos", "Tools", "Tutorials", "News"];
+
+
 
   const latestItems = [
     {
@@ -68,28 +69,7 @@ const Latest = () => {
         {/* Main Content */}
         <main className="flex-1 px-4 md:px-6 py-6">
           <div className="max-w-4xl mx-auto space-y-6">
-                        {/* Tabs - Enhanced mobile scroll */}
-                        <div className="relative">
-              <div className="scrollbar-hide">
-                <div className="flex gap-2 flex-wrap my-2 pb-1">
-                  {tabs.map((tab) => (
-                    <button
-                      key={tab}
-                      onClick={() => setActiveTab(tab)}
-                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 whitespace-nowrap flex-shrink-0 ${
-                        activeTab === tab
-                          ? "bg-primary text-primary-foreground shadow-sm"
-                          : "bg-none font-black text-muted-foreground hover:bg-muted/80 hover:text-foreground"
-                      }`}
-                    >
-                      {tab}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              {/* Gradient fade for scroll indication */}
-              <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-background to-transparent pointer-events-none md:hidden" />
-            </div>
+          <Filter tabs={LatestTabs}/>
             <div className="space-y-2">
               <h1 className="text-xl lg:text-3xl font-bold text-foreground mb-2">
                 Latest Updates
