@@ -9,6 +9,6 @@ export const JobsTabs = [
     "Junior",
     "Mid-level",
     "Senior",
-   
-
   ]
+
+  export const ToolTabs = ["All", "Development", "Design", "Testing", "Deployment", "Analytics"];
