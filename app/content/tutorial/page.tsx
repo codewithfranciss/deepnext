@@ -1,17 +1,12 @@
-import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { tutorials } from "@/data/tutorial";
 import { Button } from "@/components/ui/button";
 import Filter from "@/components/shared/TabFIlters";
 import { PlayCircle, Clock, User, Star } from "lucide-react";
+import { TutorialTabs } from "@/data/tabs";
 
 const Tutorials = () => {
-  const [activeTab, setActiveTab] = useState("All");
-  const tabs = ["All", "Beginner", "Intermediate", "Advanced", "Hooks", "Performance", "Testing"];
-  
-
-
   const getLevelColor = (level: string) => {
     switch (level) {
       case "Beginner": return "bg-green-500/10 text-green-400 border-green-500/20";
@@ -30,7 +25,7 @@ const Tutorials = () => {
               <p className="text-muted-foreground">Learn React with comprehensive tutorials and guides</p>
             </div>
             
-            <TabFilter tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+            <Filter tabs={TutorialTabs} />
 
             <div className="grid gap-4 lg:gap-6 grid-cols-1 lg:grid-cols-2">
               {tutorials.map((tutorial, index) => (
