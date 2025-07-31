@@ -31,7 +31,7 @@ const sidebarItems = [
   { title: "Search", url: "/search", icon: Search, disabled: true, comingSoon: true },
   { title: "Latest", url: "/content/latest", icon: Flame },
   { title: "Jobs", url: "/content/job", icon: Briefcase },
-  { title: "Tutorials", url: "/tutorials", icon: BookOpen },
+  { title: "Tutorials", url: "/content/tutorial", icon: BookOpen },
   { title: "Quiz", url: "/quiz", icon: Brain, isNew: true },
   { title: "Templates", url: "/templates", icon: Puzzle },
   { title: "UI", url: "/ui", icon: Palette, isNew: true },
