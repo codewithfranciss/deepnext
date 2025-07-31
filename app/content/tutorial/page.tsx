@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Filter from "@/components/shared/TabFIlters";
 import { PlayCircle, Clock, User, Star } from "lucide-react";
 import { TutorialTabs } from "@/data/tabs";
-
+import Header from "@/components/shared/Header";
 const Tutorials = () => {
   const getLevelColor = (level: string) => {
     switch (level) {
@@ -18,6 +18,7 @@ const Tutorials = () => {
 
   return (
       <div className="min-h-screen flex w-full bg-background">
+       <Header title="Tutorials" />
         <main className="flex-1 p-4 lg:p-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-6 lg:mb-8">
