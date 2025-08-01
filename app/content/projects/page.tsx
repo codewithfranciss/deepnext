@@ -115,20 +115,13 @@ export default function ProjectPage(){
                       <Button 
                         variant="outline" 
                         size="sm" 
-                        className="flex-1 group/btn hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all"
+                        className="flex group/btn hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all"
                       >
                         <Eye className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
                         View
                         <ExternalLink className="w-3 h-3 ml-auto opacity-0 group-hover/btn:opacity-100 transition-opacity" />
                       </Button>
-                      <Button 
-                        size="sm" 
-                        className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 group/btn transition-all"
-                      >
-                        <Star className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                        Star
-                        <Zap className="w-3 h-3 ml-auto opacity-0 group-hover/btn:opacity-100 transition-opacity" />
-                      </Button>
+
                     </div>
                   </CardContent>
                 </Card>
