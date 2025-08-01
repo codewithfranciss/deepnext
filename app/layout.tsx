@@ -12,8 +12,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "DeepReact",
-  description: "Ecosystem of React resources",
+  title: "DeepNext",
+  description: "Ecosystem of Reactjs and Nextjs resources",
   viewport: "width=device-width, initial-scale=1",
 };
 

@@ -54,7 +54,7 @@ export function AppSidebar() {
     <Sidebar className="w-64">
       <SidebarContent className="bg-card border-r border-border">
         <div className="p-6 border-b border-border">
-          <h1 className="font-bold text-xl text-foreground">DeepReact</h1>
+          <h1 className="font-bold text-xl text-foreground">DeepNext</h1>
         </div>
 
         <SidebarGroup className="px-3 border-none py-10">
