@@ -12,9 +12,43 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "DeepNext",
-  description: "Ecosystem of Reactjs and Nextjs resources",
+  title: "DeepNext, Your Hub for React & Next.js Resources",
+  description:
+    "Discover top-tier jobs, books, tools, and tutorials in the React.js and Next.js ecosystem. Curated for developers, by developers.",
+  keywords: [
+    "React resources",
+    "Next.js tools",
+    "React tutorials",
+    "Next.js jobs",
+    "JavaScript ecosystem",
+    "Frontend development",
+  ],
   viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
+  openGraph: {
+    title: "DeepNext, Your Hub for React & Next.js Resources",
+    description:
+      "Explore a growing collection of handpicked React and Next.js resources — jobs, tools, books, and more.",
+    url: "https://deepnext.dev",
+    siteName: "DeepNext",
+    images: [
+      {
+        url: "https://deepnext.dev/og-image.png", // Replace with your OG image URL
+        width: 1200,
+        height: 630,
+        alt: "DeepNext, Ecosystem of React and Next.js Resources",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DeepNext, Your Hub for React & Next.js Resources",
+    description:
+      "Explore curated React.js and Next.js resources including jobs, tools, and tutorials.",
+    images: ["https://deepnext.dev/og-image.png"], // Same image as above
+    creator: "@yourTwitterHandle", // Optional
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
