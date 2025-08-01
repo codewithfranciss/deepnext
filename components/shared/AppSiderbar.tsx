@@ -37,7 +37,7 @@ const sidebarItems = [
   { title: "UI", url: "/ui", icon: Palette, isNew: true },
   { title: "Tools", url: "/content/tools", icon: Wrench },
   { title: "OS Projects", url: "/content/projects", icon: Folder },
-  { title: "Hosting", url: "/hosting", icon: Cloud },
+  { title: "Hosting", url: "/content/hosting", icon: Cloud },
   { title: "Database", url: "/database", icon: Database },
   { title: "Docs", url: "/docs", icon: FileText },
 ]
