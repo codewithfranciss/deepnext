@@ -1,141 +1,197 @@
-import { SidebarProvider } from "@/components/ui/sidebar";
-import Header from "@/components/shared/Header";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Server, Zap, Shield, DollarSign, Clock } from "lucide-react";
+"use client"
+import Header from "@/components/shared/Header"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 
-const Hosting = () => {
-  const hostingProviders = [
-    {
-      name: "Vercel",
-      description: "Platform for static sites and Serverless Functions that fits perfectly with your workflow.",
-      features: ["Zero Config", "Global CDN", "Serverless Functions", "Real-time Collaboration"],
-      pricing: "Free tier available",
-      deployment: "Instant",
-      popular: true,
-      rating: 4.9
-    },
-    {
-      name: "Netlify",
-      description: "Build, deploy, and manage modern web projects with Git-based workflow and powerful serverless platform.",
-      features: ["Git Integration", "Form Handling", "Split Testing", "Edge Functions"],
-      pricing: "Free tier available",
-      deployment: "< 1 minute",
-      popular: true,
-      rating: 4.8
-    },
-    {
-      name: "Railway",
-      description: "Deploy from GitHub with zero configuration and scale up with a click.",
-      features: ["Database Hosting", "Environment Management", "Automatic Deployments", "Team Collaboration"],
-      pricing: "Pay per usage",
-      deployment: "< 30 seconds",
-      popular: false,
-      rating: 4.7
-    },
-    {
-      name: "Render",
-      description: "Cloud platform that provides static sites, web services, PostgreSQL databases, and more.",
-      features: ["Auto Deploy", "Custom Domains", "SSL Certificates", "DDoS Protection"],
-      pricing: "Free tier available",
-      deployment: "1-2 minutes",
-      popular: false,
-      rating: 4.6
-    },
-    {
-      name: "DigitalOcean App Platform",
-      description: "Platform-as-a-Service offering that simplifies deploying, managing, and scaling apps.",
-      features: ["Auto Scaling", "Database Integration", "Monitoring", "Load Balancing"],
-      pricing: "From $5/month",
-      deployment: "2-3 minutes",
-      popular: false,
-      rating: 4.5
-    },
-    {
-      name: "AWS Amplify",
-      description: "Full-stack development platform for building web and mobile applications on AWS.",
-      features: ["Full-Stack", "Authentication", "GraphQL API", "Analytics"],
-      pricing: "Pay per usage",
-      deployment: "1-2 minutes",
-      popular: false,
-      rating: 4.4
+import { ExternalLink, Zap, DollarSign, Globe, Shield } from "lucide-react"
+
+const hostingProviders = [
+  {
+    id: 1,
+    name: "Vercel",
+    description:
+      "The platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
+    category: "JAMstack",
+    pricing: "Free tier available",
+    deployment: "Git-based",
+    features: [],
+    performance: "Excellent",
+    support: "24/7",
+    url: "https://vercel.com",
+    logo: "▲",
+  },
+  {
+    id: 2,
+    name: "Netlify",
+    description:
+      "All-in-one platform for automating modern web projects with continuous deployment from Git across all of our services.",
+    category: "JAMstack",
+    pricing: "Free tier available",
+    deployment: "Git-based",
+    features: [],
+    performance: "Excellent",
+    support: "24/7",
+    url: "https://netlify.com",
+    logo: "🌐",
+  },
+  {
+    id: 3,
+    name: "DigitalOcean",
+    description:
+      "Cloud infrastructure provider with simple pricing and developer-friendly tools for deploying applications.",
+    category: "Cloud VPS",
+    pricing: "$5/month",
+    deployment: "Manual/Docker",
+    features: [],
+    performance: "Very Good",
+    support: "24/7",
+    url: "https://digitalocean.com",
+    logo: "🌊",
+  },
+  {
+    id: 4,
+    name: "Railway",
+    description: "Deploy from GitHub with zero configuration. Built for developers who want to focus on building.",
+    category: "PaaS",
+    pricing: "$5/month",
+    deployment: "Git-based",
+    features: ["Auto Deploy", "Databases", "Environment Variables", "Custom Domains"],
+    performance: "Good",
+    support: "Community",
+    url: "https://railway.app",
+    logo: "🚂",
+  },
+  {
+    id: 5,
+    name: "Render",
+    description: "Modern cloud platform that offers free SSL, global CDN, and automatic deployments from Git.",
+    category: "PaaS",
+    pricing: "Free tier available",
+    deployment: "Git-based",
+    features: ["Auto Deploy", "SSL Certificates", "CDN", "Background Jobs"],
+    performance: "Good",
+    support: "Email + Community",
+    url: "https://render.com",
+    logo: "🚀",
+  },
+  {
+    id: 6,
+    name: "AWS Amplify",
+    description: "Full-stack development platform for building scalable web and mobile applications.",
+    category: "Cloud",
+    pricing: "Pay-as-you-go",
+    deployment: "Git-based",
+    features: ["Hosting", "Authentication", "APIs", "Storage"],
+    performance: "Excellent",
+    support: "24/7 Premium",
+    url: "https://aws.amazon.com/amplify",
+    logo: "☁️",
+  },
+]
+
+const categories = ["All", "JAMstack", "Cloud VPS", "PaaS", "Cloud", "CDN"]
+
+export default function HostingPage() {
+  const [showSubmitForm, setShowSubmitForm] = useState(false)
+  const [selectedCategory, setSelectedCategory] = useState("All")
+
+  const filteredProviders =
+    selectedCategory === "All"
+      ? hostingProviders
+      : hostingProviders.filter((provider) => provider.category === selectedCategory)
+
+  const getPerformanceColor = (performance: string) => {
+    switch (performance) {
+      case "Excellent":
+        return "text-green-500"
+      case "Very Good":
+        return "text-blue-500"
+      case "Good":
+        return "text-yellow-500"
+      default:
+        return "text-neutral-400"
     }
-  ];
+  }
 
   return (
- 
-      <div className="min-h-screen flex w-full bg-background">
-       <Header title="Hosting Platforms" />
-        <main className="flex-1 p-4 lg:p-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-6 lg:mb-8">
-              <h1 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">React Hosting Solutions</h1>
-              <p className="text-muted-foreground">Best platforms to deploy and host your React applications</p>
-            </div>
+    <div className="min-h-screen bg-[#0e0e0e]">
+      {/* Header */}
+<Header title="Hosting Platforms" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
-              {hostingProviders.map((provider, index) => (
-                <Card key={index} className="border-border hover:border-primary/20 transition-all hover:shadow-lg">
-                  <CardHeader>
-                    <div className="flex items-start justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <Server className="w-5 h-5 text-primary" />
-                        <CardTitle className="text-lg lg:text-xl">{provider.name}</CardTitle>
-                      </div>
-                      {provider.popular && (
-                        <Badge className="bg-primary text-primary-foreground">Popular</Badge>
-                      )}
-                    </div>
-                    <CardDescription className="text-sm lg:text-base">{provider.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4 text-sm">
-                      <div className="flex items-center gap-2">
-                        <DollarSign className="w-4 h-4 text-green-400" />
-                        <span className="text-muted-foreground">{provider.pricing}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-blue-400" />
-                        <span className="text-muted-foreground">{provider.deployment}</span>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <h4 className="font-medium text-sm">Key Features:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {provider.features.map((feature) => (
-                          <Badge key={feature} variant="secondary" className="text-xs bg-primary/10 text-primary">
-                            {feature}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between pt-2">
-                      <div className="flex items-center gap-1">
-                        <Shield className="w-4 h-4 text-yellow-400" />
-                        <span className="text-sm font-medium">{provider.rating}/5</span>
-                      </div>
-                      <div className="flex flex-col sm:flex-row gap-2">
-                        <Button variant="outline" size="sm" className="flex-1">
-                          Learn More
-                        </Button>
-                        <Button size="sm" className="flex-1">
-                          <Zap className="w-4 h-4 mr-1" />
-                          Deploy Now
-                        </Button>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+      {/* Main Content */}
+      <main className="p-6">
+        {/* Horizontal Tab Filter */}
+        <div className="mb-8">
+          <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`
+          px-4 py-2 rounded-xl font-semibold whitespace-nowrap transition-all duration-200
+          ${
+            selectedCategory === category
+              ? "bg-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25"
+              : "bg-transparent text-white/70 hover:text-white hover:shadow-lg hover:shadow-[#7c3aed]/10 hover:bg-[#7c3aed]/10"
+          }
+        `}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-        </main>
-      </div>
-   
-  );
-};
+        </div>
 
-export default Hosting;
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProviders.map((provider) => (
+            <Card
+              key={provider.id}
+              className="bg-neutral-900/50 border-neutral-800 rounded-xl hover:border-[#7c3aed]/50 transition-all duration-200 hover:shadow-lg hover:shadow-[#7c3aed]/10 group"
+            >
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-2xl">{provider.logo}</span>
+                  <Badge variant="outline" className="border-neutral-700 text-neutral-400 text-xs">
+                    {provider.category}
+                  </Badge>
+                </div>
+                <CardTitle className="text-lg font-semibold text-white group-hover:text-[#7c3aed] transition-colors">
+                  {provider.name}
+                </CardTitle>
+                <CardDescription className="text-neutral-300 text-sm leading-relaxed line-clamp-3">
+                  {provider.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-4">
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+          
+                 
+                  </div>
+
+                 
+
+                 
+
+                  <Button
+                    className="w-full bg-secondary hover:bg-[#7c3aed]/80 text-white rounded-xl transition-all duration-200"
+                    asChild
+                  >
+                    <a href={provider.url} target="_blank" rel="noopener noreferrer">
+                      Visit Provider
+                      <ExternalLink className="w-3 h-3 ml-2" />
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </main>
+    </div>
+  )
+}
