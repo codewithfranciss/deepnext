@@ -8,10 +8,14 @@ export default function LatestCard(){
 
   dayjs.extend(relativeTime);
 
+  const sortedItems = [...latestItems].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+
     return(
         <>
                     <div className="space-y-4">
-                    {latestItems.map((item, index) => (
+                    {sortedItems.map((item, index) => (
                       <Card 
                         key={index} 
                         className="group border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 cursor-pointer"
