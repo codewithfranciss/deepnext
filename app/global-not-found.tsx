@@ -27,7 +27,7 @@ export default function GlobalNotFound() {
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Button asChild className="bg-[#7c3aed] hover:bg-[#7c3aed]/80 text-white rounded-xl px-8 py-3 text-lg">
-                <Link href="/content/latest">
+                <Link href="/content/articles">
                   <Home className="w-5 h-5 mr-2" />
                   Back to Home
                 </Link>

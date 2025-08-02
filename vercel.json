@@ -2,7 +2,7 @@
     "redirects": [
       {
         "source": "/",
-        "destination": "/content/latest",
+        "destination": "/content/articles",
         "permanent": false
       }
     ]
