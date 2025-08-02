@@ -1,12 +1,13 @@
 
 const latestItems = [
     {
-      title: "React 19 Released with New Features",
-      description: "The latest version of React brings concurrent features and improved server components for better performance.",
+      title: "React for Beginners",
+      description: " A React.js Handbook for Front End Developers",
       time: "2 hours ago",
       trending: true,
-      category: "Framework",
-      readTime: "5 min read"
+      category: "Reactjs",
+      readTime: "5 min read",
+      url:"https://www.freecodecamp.org/news/react-beginner-handbook/"
     },
     {
       title: "Vite 6.0 Beta Available",

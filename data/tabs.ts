@@ -1,4 +1,5 @@
-export const LatestTabs = ["All", "Articles", "Videos", "Tools", "Tutorials", "Quiz","UI", "OS Project"];
+export const LatestTabs = [];
+
 
 export const JobsTabs = [
     "All",

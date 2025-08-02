@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, TrendingUp, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import latestItems from "@/data/latest";
 export default function LatestCard(){
     return(
@@ -35,9 +36,7 @@ export default function LatestCard(){
                               {item.description}
                             </CardDescription>
                             <div className="flex justify-between items-center">
-                              <Badge variant="outline" className="text-xs">
-                                {item.category}
-                              </Badge>
+
                             </div>
                           </div>
                         </CardHeader>
@@ -53,10 +52,10 @@ export default function LatestCard(){
                               <span className="hidden sm:inline">{item.readTime}</span>
                             </div>
                             
-                            <div className="flex items-center gap-1 text-xs md:text-sm text-muted-foreground group-hover:text-primary transition-colors duration-200">
+                            <a href={item.url} target="_blank"><div className="flex items-center gap-1 text-xs md:text-sm text-muted-foreground group-hover:text-primary transition-colors duration-200">
                               <span className="hidden sm:inline">Read more</span>
                               <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0" />
-                            </div>
+                            </div></a>
                           </div>
                         </CardContent>
                       </Card>

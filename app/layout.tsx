@@ -12,7 +12,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "DeepNext, Your Hub for React & Next.js Resources",
+  title: "DeepNext",
   description:
     "Discover top-tier jobs, books, tools, and tutorials in the React.js and Next.js ecosystem. Curated for developers, by developers.",
   keywords: [
