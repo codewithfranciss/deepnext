@@ -13,6 +13,7 @@ import {
   Cloud,
   Database,
   FileText,
+  Sparkles 
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -29,7 +30,7 @@ import { Badge } from "@/components/ui/badge"
 
 const sidebarItems = [
   { title: "Search", url: "/search", icon: Search, disabled: true, comingSoon: true },
-  { title: "Latest", url: "/content/latest", icon: Flame },
+  { title: "Latest", url: "/content/article", icon: Sparkles },
   { title: "Jobs", url: "/content/job", icon: Briefcase },
   { title: "Tutorials", url: "/content/tutorial", icon: BookOpen },
   { title: "Quiz", url: "/quiz", icon: Brain, isNew: true },
