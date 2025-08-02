@@ -20,12 +20,13 @@ const latestItems = [
 
     },
     {
-      title: "TypeScript 5.6 Features Overview",
-      description: "New type annotations and improved inference capabilities in the latest release with enhanced developer tools.",
+      title: "React 19 Game Changer Hooks",
+      description: "React 19 introduces a powerful set of new and updated Hooks that significantly enhance the developer experience and  app performance....",
       time: "1 day ago",
       trending: false,
       category: "Language",
-      readTime: "7 min read"
+      readTime: "3 min read",
+      url: "https://blog.arunshaw.in/blog/react-19-game-changer-hooks"
     },
     {
       title: "Next.js App Router Best Practices",
@@ -33,15 +34,17 @@ const latestItems = [
       time: "2 days ago",
       trending: false,
       category: "Tutorial",
-      readTime: "12 min read"
+      readTime: "12 min read",
+      url: "https://thiraphat-ps-dev.medium.com/mastering-next-js-app-router-best-practices-for-structuring-your-application-3f8cf0c76580"
     },
     {
-      title: "Advanced CSS Grid Techniques",
-      description: "Master modern CSS Grid layouts with practical examples and real-world use cases for responsive design.",
+      title: "Search Engine Optimization On NextJs",
+      description: "Welcome to the comprehensive guide on Search Engine Optimization (SEO) for Next.js. In this blog, we'll dive deep into the strategies and techniques you need to boost your Next.js website's visibility and crawlability on on search engines.",
       time: "3 days ago",
       trending: false,
       category: "CSS",
-      readTime: "8 min read"
+      readTime: "11 min read",
+      url: "https://blog.arunshaw.in/blog/search-engine-optimization-on-nextjs"
     }
   ];
 
