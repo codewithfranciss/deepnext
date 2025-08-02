@@ -16,10 +16,13 @@ export default function LatestCard(){
         <>
                     <div className="space-y-4">
                     {sortedItems.map((item, index) => (
+
+                      <a key={index} href={item.url} target="_blank" className="block">
                       <Card 
                         key={index} 
                         className="group border-border hover:border-primary/20 hover:shadow-md transition-all duration-300 cursor-pointer"
                       >
+                        
                         <CardHeader className="pb-3">
                           <div className="space-y-3">
                             {/* Title and trending badge */}
@@ -67,6 +70,7 @@ export default function LatestCard(){
                           </div>
                         </CardContent>
                       </Card>
+                      </a>
                     ))}
                   </div>
                   <div className="flex justify-center pt-6">
