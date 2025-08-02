@@ -30,7 +30,7 @@ import { Badge } from "@/components/ui/badge"
 
 const sidebarItems = [
   { title: "Search", url: "/search", icon: Search, disabled: true, comingSoon: true },
-  { title: "Articles", url: "/content/article", icon: Sparkles },
+  { title: "Articles", url: "/content/articles", icon: Sparkles },
   { title: "Jobs", url: "/content/job", icon: Briefcase },
   { title: "Tutorials", url: "/content/tutorial", icon: BookOpen },
   { title: "Quiz", url: "/quiz", icon: Brain, isNew: true },
