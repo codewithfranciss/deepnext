@@ -10,12 +10,14 @@ const latestItems = [
       url:"https://www.freecodecamp.org/news/react-beginner-handbook/"
     },
     {
-      title: "Vite 6.0 Beta Available",
-      description: "Major performance improvements and new development features for faster builds and better developer experience.",
+      title: "Mapped types in TypeScript",
+      description: "As per TypeScript’s documentation, mapped types can be used to avoid repeating the type information inside a new type. A mapped type might look complex at first glance, but they do save the repetition.....",
       time: "4 hours ago",
-      trending: true,
+      trending: false,
       category: "Build Tool",
-      readTime: "3 min read"
+      readTime: "3 min read",
+      url: "https://amanhimself.dev/blog/mapped-types-in-typescript/"
+
     },
     {
       title: "TypeScript 5.6 Features Overview",
