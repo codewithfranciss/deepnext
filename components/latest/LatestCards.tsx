@@ -1,9 +1,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, TrendingUp, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import dayjs from "dayjs"
+import relativeTime from "dayjs/plugin/relativeTime";
 import latestItems from "@/data/latest";
 export default function LatestCard(){
+
+  dayjs.extend(relativeTime);
+
     return(
         <>
                     <div className="space-y-4">
@@ -46,7 +50,7 @@ export default function LatestCard(){
                             <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
                               <div className="flex items-center gap-1">
                                 <Clock className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
-                                <span>{item.time}</span>
+                                <span>{dayjs(item.publishedAt).fromNow()}</span>
                               </div>
                               <span className="hidden sm:inline">•</span>
                               <span className="hidden sm:inline">{item.readTime}</span>
