@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import Header from "@/components/shared/Header"
 import { ExternalLink,ChevronDown, ChevronUp, Server} from "lucide-react"
-import { hostingProviders } from "@/data/hosting"
+import hostingProviders from "@/data/hosting"
 
 
 export default function HostingPage() {
