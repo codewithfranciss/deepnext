@@ -1,9 +1,18 @@
 const latestItems = [
   {
+    title: "The anatomy of a React Island",
+    description: "A coworker asked how React Islands work and I realized it's a technique I've been using to modernize monolithic web codebases for years, but never wrote down how it works.",
+    publishedAt: "2025-08-04T17:00:00Z", 
+    trending: false,
+    category: "Reactjs",
+    readTime: "2 min read",
+    url: "https://swizec.com/blog/the-anatomy-of-a-react-island/"
+  },
+  {
     title: "How to Fetch API Data in React Using Axios",
     description: "Learning how to fetch data from APIs is a must-have skill for any developer. Whether you're building a simple portfolio site or working on real-world applications, you'll often need to connect to external data sources....",
     publishedAt: "2025-08-04T17:00:00Z", 
-    trending: true,
+    trending: false,
     category: "Reactjs",
     readTime: "5 min read",
     url: "https://www.freecodecamp.org/news/how-to-fetch-api-data-in-react-using-axios/"
