@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { databases } from "@/data/db"
+import databases from "@/data/database"
 import Header from "@/components/shared/Header"
 import { ExternalLink, Database} from "lucide-react"
 
