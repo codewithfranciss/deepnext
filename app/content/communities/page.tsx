@@ -4,8 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Users, MessageCircle, Hash, Send } from "lucide-react";
+import Header from "@/components/shared/Header";
 
-const communityTabs = ["All", "Twitter", "Discord", "Telegram", "Reddit"];
 
 const communities = {
   Twitter: [
@@ -173,8 +173,10 @@ export default function Communities() {
 
   return (
     <div className="min-h-screen bg-background">
+          <Header title="Communities" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Header */}
+      
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Developer Communities
