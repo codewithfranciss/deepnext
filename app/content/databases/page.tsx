@@ -4,7 +4,8 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { SidebarTrigger } from "@/components/ui/sidebar"
+import Filter from "@/components/shared/TabFIlters"
+import { Dbtabs } from "@/data/tabs"
 import Header from "@/components/shared/Header"
 import { ExternalLink, Database, Zap, DollarSign, Shield } from "lucide-react"
 
@@ -91,7 +92,7 @@ const databases = [
   },
 ]
 
-const categories = ["All", "PostgreSQL", "MySQL", "NoSQL", "Redis", "Serverless", "Managed"]
+
 
 export default function DatabasePage() {
   const [showSubmitForm, setShowSubmitForm] = useState(false)
@@ -136,26 +137,7 @@ export default function DatabasePage() {
       {/* Main Content */}
       <main className="p-6">
         {/* Horizontal Tab Filter */}
-        <div className="mb-8">
-          <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`
-          px-4 py-2 rounded-xl font-semibold whitespace-nowrap transition-all duration-200
-          ${
-            selectedCategory === category
-              ? "bg-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25"
-              : "bg-transparent text-white/70 hover:text-white hover:shadow-lg hover:shadow-[#7c3aed]/10 hover:bg-[#7c3aed]/10"
-          }
-        `}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
+        <Filter tabs={Dbtabs} />
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

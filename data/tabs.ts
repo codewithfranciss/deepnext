@@ -15,3 +15,5 @@ export const JobsTabs = [
   export const ToolTabs = ["All", "Development", "Design", "Testing", "Deployment", "Analytics"];
 
   export const TutorialTabs = ["All", "Beginner", "Intermediate", "Advanced", "Hooks", "Performance", "Testing"];
+
+  export const Dbtabs = []
