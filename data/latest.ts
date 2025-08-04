@@ -1,5 +1,14 @@
 const latestItems = [
   {
+    title: "How to Fetch API Data in React Using Axios",
+    description: "Learning how to fetch data from APIs is a must-have skill for any developer. Whether you're building a simple portfolio site or working on real-world applications, you'll often need to connect to external data sources....",
+    publishedAt: "2025-08-04T17:00:00Z", 
+    trending: true,
+    category: "Reactjs",
+    readTime: "5 min read",
+    url: "https://www.freecodecamp.org/news/how-to-fetch-api-data-in-react-using-axios/"
+  },
+  {
     title: "React for Beginners",
     description: "A React.js Handbook for Front End Developers",
     publishedAt: "2025-08-02T10:00:00Z", // UTC time
