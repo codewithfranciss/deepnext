@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import { SubmitForm } from "@/components/submit-form"
+import Header from "@/components/shared/Header"
 import { ExternalLink, Database, Zap, DollarSign, Shield } from "lucide-react"
 
 const databases = [
@@ -131,27 +131,7 @@ export default function DatabasePage() {
   return (
     <div className="min-h-screen bg-[#0e0e0e]">
       {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-neutral-800 bg-[#0e0e0e]/80 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-4">
-            <SidebarTrigger className="text-white hover:text-[#7c3aed]" />
-            <h1 className="text-xl font-semibold">React Databases</h1>
-          </div>
-          <div className="relative">
-            <Button
-              onClick={() => setShowSubmitForm(!showSubmitForm)}
-              className="bg-[#7c3aed] hover:bg-[#7c3aed]/80 text-white rounded-xl"
-            >
-              Submit Database
-            </Button>
-            {showSubmitForm && (
-              <div className="absolute right-0 top-12 z-50">
-                <SubmitForm onClose={() => setShowSubmitForm(false)} />
-              </div>
-            )}
-          </div>
-        </div>
-      </header>
+  <Header title="Databases" />
 
       {/* Main Content */}
       <main className="p-6">
