@@ -5,131 +5,14 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Header from "@/components/shared/Header"
-import { ExternalLink, Zap, DollarSign, Globe, Shield, Search, ChevronDown, ChevronUp, Server, Code2 } from "lucide-react"
+import { ExternalLink,ChevronDown, ChevronUp, Server} from "lucide-react"
+import { hostingProviders } from "@/data/hosting"
 
-const hostingProviders = [
-  {
-    id: 1,
-    name: "Vercel",
-    description:
-      "The platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
-    category: "JAMstack",
-    pricing: "Free tier available",
-    deployment: "Git-based",
-    features: ["Edge Functions", "Analytics", "Preview Deployments", "Custom Domains"],
-    performance: "Excellent",
-    support: "24/7",
-    url: "https://vercel.com",
-    logo: "▲",
-  },
-  {
-    id: 2,
-    name: "Netlify",
-    description:
-      "All-in-one platform for automating modern web projects with continuous deployment from Git across all of our services.",
-    category: "JAMstack",
-    pricing: "Free tier available",
-    deployment: "Git-based",
-    features: ["Serverless Functions", "Form Handling", "Split Testing", "Identity"],
-    performance: "Excellent",
-    support: "Community + Paid",
-    url: "https://netlify.com",
-    logo: "🌐",
-  },
-  {
-    id: 3,
-    name: "DigitalOcean",
-    description:
-      "Cloud infrastructure provider with simple pricing and developer-friendly tools for deploying applications.",
-    category: "Cloud VPS",
-    pricing: "$5/month",
-    deployment: "Manual/Docker",
-    features: ["Droplets", "Kubernetes", "Databases", "Load Balancers"],
-    performance: "Very Good",
-    support: "24/7",
-    url: "https://digitalocean.com",
-    logo: "🌊",
-  },
-  {
-    id: 4,
-    name: "Railway",
-    description: "Deploy from GitHub with zero configuration. Built for developers who want to focus on building.",
-    category: "PaaS",
-    pricing: "$5/month",
-    deployment: "Git-based",
-    features: ["Auto Deploy", "Databases", "Environment Variables", "Custom Domains"],
-    performance: "Good",
-    support: "Community",
-    url: "https://railway.app",
-    logo: "🚂",
-  },
-  {
-    id: 5,
-    name: "Render",
-    description: "Modern cloud platform that offers free SSL, global CDN, and automatic deployments from Git.",
-    category: "PaaS",
-    pricing: "Free tier available",
-    deployment: "Git-based",
-    features: ["Auto Deploy", "SSL Certificates", "CDN", "Background Jobs"],
-    performance: "Good",
-    support: "Email + Community",
-    url: "https://render.com",
-    logo: "🚀",
-  },
-  {
-    id: 6,
-    name: "AWS Amplify",
-    description: "Full-stack development platform for building scalable web and mobile applications.",
-    category: "Cloud",
-    pricing: "Pay-as-you-go",
-    deployment: "Git-based",
-    features: ["Hosting", "Authentication", "APIs", "Storage"],
-    performance: "Excellent",
-    support: "24/7 Premium",
-    url: "https://aws.amazon.com/amplify",
-    logo: "☁️",
-  },
-]
-
-const categories = ["JAMstack", "Cloud VPS", "PaaS", "Cloud", "CDN"]
 
 export default function HostingPage() {
-  const [showSubmitForm, setShowSubmitForm] = useState(false)
-  const [searchTerm, setSearchTerm] = useState("")
-  const [expandedFilters, setExpandedFilters] = useState(false)
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [expandedHero, setExpandedHero] = useState(false)
 
-  const filteredProviders = hostingProviders.filter(provider => {
-    const matchesSearch = provider.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         provider.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         provider.category.toLowerCase().includes(searchTerm.toLowerCase())
-    
-    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(provider.category)
-    
-    return matchesSearch && matchesCategory
-  })
 
-  const toggleCategory = (category: string) => {
-    setSelectedCategories(prev => 
-      prev.includes(category) 
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
-    )
-  }
-
-  const getPerformanceColor = (performance: string) => {
-    switch (performance) {
-      case "Excellent":
-        return "text-green-500"
-      case "Very Good":
-        return "text-blue-500"
-      case "Good":
-        return "text-yellow-500"
-      default:
-        return "text-neutral-400"
-    }
-  }
 
   return (
     <div className="min-h-screen bg-[#0e0e0e]">
@@ -186,7 +69,7 @@ export default function HostingPage() {
 
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProviders.map((provider) => (
+          {hostingProviders.map((provider) => (
             <Card
               key={provider.id}
               className="bg-neutral-900/50 border-neutral-800 rounded-xl hover:border-primary/50 transition-all duration-200 hover:shadow-lg hover:shadow-primary/10 group"

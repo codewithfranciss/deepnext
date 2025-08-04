@@ -3,55 +3,16 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import Filter from "@/components/shared/TabFIlters"
-import { Dbtabs } from "@/data/tabs"
 import { databases } from "@/data/db"
 import Header from "@/components/shared/Header"
-import { ExternalLink, Database, Zap, DollarSign, Shield } from "lucide-react"
-
-
-
-
+import { ExternalLink, Database} from "lucide-react"
 
 export default function DatabasePage() {
-
-  const [selectedCategory, setSelectedCategory] = useState("All")
-
-
-  const getScalabilityColor = (scalability: string) => {
-    switch (scalability) {
-      case "Very High":
-        return "text-green-500"
-      case "High":
-        return "text-blue-500"
-      case "Medium":
-        return "text-yellow-500"
-      default:
-        return "text-neutral-400"
-    }
-  }
-
-  const getComplexityColor = (complexity: string) => {
-    switch (complexity) {
-      case "Low":
-        return "text-green-500"
-      case "Medium":
-        return "text-yellow-500"
-      case "High":
-        return "text-red-500"
-      default:
-        return "text-neutral-400"
-    }
-  }
-
   return (
     <div className="min-h-screen bg-[#0e0e0e]">
       {/* Header */}
   <Header title="Databases" />
-
-      {/* Main Content */}
       <main className="p-6">
-        {/* Horizontal Tab Filter */}
         {/* <Filter tabs={Dbtabs} /> */}
 
         {/* Content Grid */}
