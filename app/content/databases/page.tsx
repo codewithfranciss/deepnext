@@ -52,7 +52,7 @@ export default function DatabasePage() {
       {/* Main Content */}
       <main className="p-6">
         {/* Horizontal Tab Filter */}
-        <Filter tabs={Dbtabs} />
+        {/* <Filter tabs={Dbtabs} /> */}
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -80,33 +80,6 @@ export default function DatabasePage() {
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center gap-1 text-neutral-400">
-                      <DollarSign className="w-3 h-3" />
-                      <span className="text-xs">{database.pricing}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Zap className="w-3 h-3 text-blue-500" />
-                      <span className={`text-xs ${getScalabilityColor(database.scalability)}`}>
-                        {database.scalability}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-1">
-                    <Shield className="w-3 h-3 text-yellow-500" />
-                    <span className="text-xs text-neutral-400">Complexity: </span>
-                    <span className={`text-xs ${getComplexityColor(database.complexity)}`}>{database.complexity}</span>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1">
-                    {database.features.map((feature, index) => (
-                      <Badge key={index} variant="secondary" className="bg-neutral-800 text-neutral-300 text-xs">
-                        {feature}
-                      </Badge>
-                    ))}
-                  </div>
-
                   <Button
                     className="w-full bg-[#7c3aed] hover:bg-[#7c3aed]/80 text-white rounded-xl transition-all duration-200"
                     asChild
