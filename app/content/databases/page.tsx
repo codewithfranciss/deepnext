@@ -1,5 +1,4 @@
 "use client"
-
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -42,7 +41,7 @@ export default function DatabasePage() {
               <CardContent className="pt-0">
                 <div className="space-y-4">
                   <Button
-                    className="w-full bg-[#7c3aed] hover:bg-[#7c3aed]/80 text-white rounded-xl transition-all duration-200"
+                    className="w-full bg-secondary hover:bg-primary text-white rounded-xl transition-all duration-200"
                     asChild
                   >
                     <a href={database.url} target="_blank" rel="noopener noreferrer">
