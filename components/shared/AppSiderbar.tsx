@@ -10,7 +10,7 @@ import {
   Folder,
   Cloud,
   Database,
-  FileText,
+  Users,
   Sparkles 
 } from "lucide-react"
 import Link from "next/link"
@@ -38,7 +38,7 @@ const sidebarItems = [
   { title: "OS Projects", url: "/content/projects", icon: Folder },
   { title: "Hosting", url: "/content/hosting", icon: Cloud },
   { title: "Database", url: "/content/databases", icon: Database },
-  { title: "Docs", url: "/docs", icon: FileText },
+  { title: "Communities", url: "/communities", icon: Users },
 ]
 
 export function AppSidebar() {
