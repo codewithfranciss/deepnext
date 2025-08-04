@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/shared/AppSiderbar";
 import { Footer } from "@/components/shared/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={`${poppins.variable} font-poppins`}>
+      <Analytics/>
         <SidebarProvider defaultOpen={true}>
           <div className="flex min-h-screen">
             <AppSidebar />
