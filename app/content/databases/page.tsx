@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -15,13 +14,9 @@ import { ExternalLink, Database, Zap, DollarSign, Shield } from "lucide-react"
 
 
 export default function DatabasePage() {
-  const [showSubmitForm, setShowSubmitForm] = useState(false)
+
   const [selectedCategory, setSelectedCategory] = useState("All")
 
-  const filteredDatabases = databases.filter((db) => {
-    if (selectedCategory === "All") return true
-    return db.category === selectedCategory || db.type === selectedCategory
-  })
 
   const getScalabilityColor = (scalability: string) => {
     switch (scalability) {
@@ -61,7 +56,7 @@ export default function DatabasePage() {
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredDatabases.map((database) => (
+          {databases.map((database) => (
             <Card
               key={database.id}
               className="bg-neutral-900/50 border-neutral-800 rounded-xl hover:border-[#7c3aed]/50 transition-all duration-200 hover:shadow-lg hover:shadow-[#7c3aed]/10 group"
