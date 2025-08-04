@@ -38,7 +38,7 @@ const sidebarItems = [
   { title: "OS Projects", url: "/content/projects", icon: Folder },
   { title: "Hosting", url: "/content/hosting", icon: Cloud },
   { title: "Database", url: "/content/databases", icon: Database },
-  { title: "Communities", url: "/communities", icon: Users },
+  { title: "Communities", url: "/content/communities", icon: Users },
 ]
 
 export function AppSidebar() {
