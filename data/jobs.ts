@@ -2,18 +2,18 @@
 const jobs = [
     {
       id: 1,
-      title: "Senior React Developer",
-      company: "TechCorp Inc.",
-      location: "San Francisco, CA",
+      title: "Developer Full Stack",
+      company: "JetBlue Airways Corporation",
+      location: "Long Island City, NY",
       type: "Full-time",
-      level: "Senior",
-      salary: "$120k - $160k",
-      postedAt: "2024-01-15",
+      level: "Entry",
+      salary: "$91K - $129K",
+      postedAt: "2025-07-04",
       description:
         "Join our team to build cutting-edge React applications with modern technologies including Next.js, TypeScript, and GraphQL.",
-      requirements: ["5+ years React experience", "TypeScript proficiency", "Next.js knowledge"],
-      url: "https://example.com/jobs/senior-react-dev",
-      remote: true,
+      requirements: ["5+ years Nextjs experience", "TypeScript proficiency", "Next.js knowledge"],
+      url: "https://www.glassdoor.com/Job/united-states-nextjs-jobs-SRCH_IL.0,13_IN1_KO14,20.htm",
+      remote: false,
     },
     {
       id: 2,

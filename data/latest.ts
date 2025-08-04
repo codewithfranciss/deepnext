@@ -2,7 +2,7 @@ const latestItems = [
   {
     title: "The anatomy of a React Island",
     description: "A coworker asked how React Islands work and I realized it's a technique I've been using to modernize monolithic web codebases for years, but never wrote down how it works.",
-    publishedAt: "2025-08-04T17:00:00Z", 
+    publishedAt: "2025-08-04T18:00:00Z", 
     trending: false,
     category: "Reactjs",
     readTime: "2 min read",
