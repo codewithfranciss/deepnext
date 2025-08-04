@@ -18,7 +18,7 @@ export default function DatabasePage() {
         <div className="mb-8 lg:mb-12 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <Database className="w-4 h-4" />
-            Next.js Developer Resources
+            Databases
           </div>
           <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mb-4">
             Top Databases for Your Next.js Projects
@@ -37,7 +37,11 @@ export default function DatabasePage() {
             >
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-2xl">{database.logo}</span>
+                <img
+                    src={database.logo}
+                    alt={`${database.name} logo`}
+                 className="w-10 h-10 rounded-md object-contain p-1"/>
+
                   <Badge variant="outline" className="border-neutral-700 text-neutral-400 text-xs">
                     {database.category}
                   </Badge>
