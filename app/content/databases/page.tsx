@@ -1,4 +1,5 @@
 "use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -10,9 +11,22 @@ export default function DatabasePage() {
   return (
     <div className="min-h-screen bg-[#0e0e0e]">
       {/* Header */}
-  <Header title="Databases" />
+      <Header title="Databases" />
+
       <main className="p-6">
-        {/* <Filter tabs={Dbtabs} /> */}
+        {/* Hero Section */}
+        <div className="mb-8 lg:mb-12 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+            <Database className="w-4 h-4" />
+            Next.js Developer Resources
+          </div>
+          <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent mb-4">
+            Top Databases for Your Next.js Projects
+          </h1>
+          <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Browse a handpicked collection of modern, reliable databases to supercharge your Next.js applications.
+          </p>
+        </div>
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

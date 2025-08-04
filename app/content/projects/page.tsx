@@ -6,18 +6,6 @@ import { Star, GitFork, Eye, Calendar, Code2, Github, ExternalLink, Zap } from "
 import Header from "@/components/shared/Header";
 
 export default function ProjectPage(){
-
-  const getLanguageColor = (language: string) => {
-    switch (language) {
-      case "TypeScript": return "bg-blue-500/10 text-blue-400 border-blue-500/20";
-      case "JavaScript": return "bg-yellow-500/10 text-yellow-400 border-yellow-500/20";
-      case "Python": return "bg-green-500/10 text-green-400 border-green-500/20";
-      case "React": return "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
-      case "Vue": return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20";
-      default: return "bg-gray-500/10 text-gray-400 border-gray-500/20";
-    }
-  };
-
   return (
       <div className="min-h-screen flex flex-col w-full bg-gradient-to-br from-background via-background to-muted/20">
         <Header title="OS Projects"/>
