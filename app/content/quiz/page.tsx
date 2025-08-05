@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import { QuizRunner } from "@/components/quiz-runner"
+import { QuizRunner } from "@/components/quiz/QuizRunner"
 import { Play, Clock, Trophy, Users, Star } from "lucide-react"
 
 const quizzes = [
@@ -366,7 +366,7 @@ export default function QuizPage() {
             </Button>
             {showSubmitForm && (
               <div className="absolute right-0 top-12 z-50">
-                <SubmitForm onClose={() => setShowSubmitForm(false)} />
+             
               </div>
             )}
           </div>
