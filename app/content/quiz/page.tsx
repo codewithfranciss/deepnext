@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import { SubmitForm } from "@/components/submit-form"
 import { QuizRunner } from "@/components/quiz-runner"
 import { Play, Clock, Trophy, Users, Star } from "lucide-react"
 
