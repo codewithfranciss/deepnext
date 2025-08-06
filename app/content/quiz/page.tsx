@@ -1,13 +1,11 @@
 "use client"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { SidebarTrigger } from "@/components/ui/sidebar"
 import { QuizRunner } from "@/components/quiz/QuizRunner"
-import { Play, Clock, Trophy, Users, Star } from "lucide-react"
-
+import { Play, Clock, Users, Brain } from "lucide-react"
+import Header from "@/components/shared/Header"
 const quizzes = [
   {
     id: 1,
@@ -308,16 +306,13 @@ const quizzes = [
   },
 ]
 
-const categories = ["All", "Basics", "Hooks", "Patterns", "Performance", "Testing", "State Management"]
 
 export default function QuizPage() {
   const [showSubmitForm, setShowSubmitForm] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [activeQuiz, setActiveQuiz] = useState<(typeof quizzes)[0] | null>(null)
 
-  const filteredQuizzes =
-    selectedCategory === "All" ? quizzes : quizzes.filter((quiz) => quiz.category === selectedCategory)
-
+  
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case "Beginner":
@@ -345,114 +340,66 @@ export default function QuizPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0e0e0e]">
-      {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-neutral-800 bg-[#0e0e0e]/80 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-3 sm:px-4 lg:px-6 py-3 sm:py-4">
-          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-            <SidebarTrigger className="text-white hover:text-[#7c3aed] flex-shrink-0" />
-            <div className="flex items-center gap-2 min-w-0">
-              <h1 className="text-lg sm:text-xl font-semibold truncate">React Quiz</h1>
-              <Badge className="bg-[#7c3aed] text-white text-xs sm:text-sm flex-shrink-0">New</Badge>
+   
+    <div className="min-h-screen flex-col flex w-full bg-background">
+    <Header title="Quizzes" />
+      <main className="flex-1 p-4 lg:p-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-6 lg:mb-8">
+            <div className="flex items-center gap-3 mb-2">
+              <h1 className="text-2xl lg:text-3xl font-bold text-foreground">React Quizzes</h1>
+              <Badge className="bg-primary text-primary-foreground">New</Badge>
             </div>
+            <p className="text-muted-foreground">Challenge yourself and test your React knowledge</p>
           </div>
-          <div className="relative flex-shrink-0">
-            <Button
-              onClick={() => setShowSubmitForm(!showSubmitForm)}
-              className="bg-[#7c3aed] hover:bg-[#7c3aed]/80 text-white rounded-xl text-sm sm:text-base px-3 sm:px-4 py-2"
-            >
-              <span className="hidden sm:inline">Submit Quiz</span>
-              <span className="sm:hidden">Submit</span>
-            </Button>
-            {showSubmitForm && (
-              <div className="absolute right-0 top-12 z-50">
-             
-              </div>
-            )}
-          </div>
-        </div>
-      </header>
+          
+         
 
-      {/* Main Content */}
-      <main className="p-3 sm:p-4 lg:p-6 w-full">
-        {/* Horizontal Tab Filter */}
-        <div className="mb-6 sm:mb-8">
-          <div className="flex gap-2 sm:gap-4 overflow-x-auto scrollbar-hide pb-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`
-            px-3 sm:px-4 py-2 rounded-xl font-semibold whitespace-nowrap transition-all duration-200 text-sm sm:text-base flex-shrink-0
-            ${
-              selectedCategory === category
-                ? "bg-[#7c3aed] text-white shadow-lg shadow-[#7c3aed]/25"
-                : "bg-transparent text-white/70 hover:text-white hover:shadow-lg hover:shadow-[#7c3aed]/10 hover:bg-[#7c3aed]/10"
-            }
-          `}
-              >
-                {category}
-              </button>
+          <div className="grid gap-4 lg:gap-6 grid-cols-1 lg:grid-cols-2">
+            {quizzes.map((quiz, index) => (
+              <Card key={index} className="border-border hover:border-primary/20 transition-all hover:shadow-lg hover:shadow-primary/10 hover-scale">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <CardTitle className="text-xl">{quiz.title}</CardTitle>
+                      </div>
+                      <CardDescription className="text-base mb-3">{quiz.description}</CardDescription>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-1">
+                          <Brain className="w-4 h-4" />
+                          {quiz.questions} questions
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-4 h-4" />
+                          {quiz.duration}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Users className="w-4 h-4" />
+                          {quiz.participants.toLocaleString()} taken
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between">
+                    <Button 
+                      onClick={() => handleStartQuiz(quiz)}
+                      className="group relative bg-secondary overflow-hidden hover:scale-105 transition-all duration-200"
+                    >
+                      <div className="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                      <Play className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                      Start Quiz
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
-
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-none">
-          {filteredQuizzes.map((quiz) => (
-            <Card
-              key={quiz.id}
-              className="bg-neutral-900/50 border-neutral-800 rounded-xl hover:border-[#7c3aed]/50 transition-all duration-200 hover:shadow-lg hover:shadow-[#7c3aed]/10 group"
-            >
-              <CardHeader className="pb-3 sm:pb-4 px-4 sm:px-6">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-1 sm:gap-2">
-                    <Badge className={`text-white text-xs ${getDifficultyColor(quiz.difficulty)}`}>
-                      {quiz.difficulty}
-                    </Badge>
-                    {quiz.isNew && <Badge className="bg-[#7c3aed] text-white text-xs">New</Badge>}
-                  </div>
-                  <div className="flex items-center gap-1 text-yellow-500">
-                    <Star className="w-3 h-3 fill-current" />
-                    <span className="text-xs">{quiz.rating}</span>
-                  </div>
-                </div>
-                <CardTitle className="text-base sm:text-lg font-semibold text-white group-hover:text-[#7c3aed] transition-colors line-clamp-2 leading-tight">
-                  {quiz.title}
-                </CardTitle>
-                <CardDescription className="text-neutral-300 text-xs sm:text-sm leading-relaxed line-clamp-3">
-                  {quiz.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0 px-4 sm:px-6">
-                <div className="space-y-2 sm:space-y-3">
-                  <div className="grid grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm text-neutral-400">
-                    <div className="flex items-center gap-1">
-                      <Trophy className="w-3 h-3" />
-                      <span>{quiz.questions} questions</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      <span>{quiz.duration}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1 text-xs sm:text-sm text-neutral-400">
-                    <Users className="w-3 h-3" />
-                    <span>{quiz.participants.toLocaleString()} participants</span>
-                  </div>
-                  <Button
-                    className="w-full bg-[#7c3aed] hover:bg-[#7c3aed]/80 text-white rounded-xl transition-all duration-200 text-sm sm:text-base py-2 sm:py-2.5"
-                    onClick={() => handleStartQuiz(quiz)}
-                  >
-                    <Play className="w-3 h-3 mr-2" />
-                    Start Quiz
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
       </main>
     </div>
+
   )
 }

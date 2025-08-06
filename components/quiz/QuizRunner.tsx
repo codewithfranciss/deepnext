@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { SidebarTrigger } from "@/components/ui/sidebar"
+
 import { X, Clock, CheckCircle, XCircle, Trophy, RotateCcw, ArrowRight, ArrowLeft } from "lucide-react"
 
 interface Question {
@@ -136,9 +136,9 @@ export function QuizRunner({ quiz, onComplete, onExit }: QuizRunnerProps) {
     return (
       <div className="min-h-screen bg-[#0e0e0e]">
         <header className="sticky top-0 z-40 border-b border-neutral-800 bg-[#0e0e0e]/80 backdrop-blur-sm">
-          <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-8 sm:py-[18px]">
             <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-              <SidebarTrigger className="text-white hover:text-[#7c3aed] flex-shrink-0" />
+              
               <div className="flex items-center gap-2 sm:gap-4 min-w-0">
                 <h1 className="text-lg sm:text-xl font-semibold truncate">Quiz Setup</h1>
               </div>
@@ -154,50 +154,13 @@ export function QuizRunner({ quiz, onComplete, onExit }: QuizRunnerProps) {
         <main className="p-4 sm:p-6 flex items-center justify-center min-h-[calc(100vh-80px)]">
           <Card className="w-full max-w-2xl bg-neutral-900/50 border-neutral-800 rounded-xl mx-4">
             <CardHeader className="text-center pb-4 sm:pb-6 px-4 sm:px-6">
-              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <Badge className={`text-white text-xs sm:text-sm ${getDifficultyColor(quiz.difficulty)}`}>
-                  {quiz.difficulty}
-                </Badge>
-                <Badge variant="outline" className="border-neutral-700 text-neutral-400 text-xs sm:text-sm">
-                  {quiz.category}
-                </Badge>
-              </div>
               <CardTitle className="text-xl sm:text-2xl font-bold text-white mb-2">{quiz.title}</CardTitle>
               <CardDescription className="text-neutral-300 text-base sm:text-lg px-2">
                 {quiz.description}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6">
-              <div className="grid grid-cols-2 gap-4 sm:gap-6 text-center">
-                <div className="space-y-1 sm:space-y-2">
-                  <div className="text-xl sm:text-2xl font-bold text-[#7c3aed]">{totalQuestions}</div>
-                  <div className="text-xs sm:text-sm text-neutral-400">Questions</div>
-                </div>
-                <div className="space-y-1 sm:space-y-2">
-                  <div className="text-xl sm:text-2xl font-bold text-[#7c3aed]">{formatTime(timeLeft)}</div>
-                  <div className="text-xs sm:text-sm text-neutral-400">Time Limit</div>
-                </div>
-              </div>
-
-              <div className="space-y-3 sm:space-y-4 text-sm text-neutral-300">
-                <h3 className="font-semibold text-white text-base">Quiz Instructions:</h3>
-                <ul className="space-y-1 sm:space-y-2 list-disc list-inside text-xs sm:text-sm leading-relaxed">
-                  <li>You have {formatTime(timeLeft)} to complete all questions</li>
-                  <li>You can navigate between questions using the Previous/Next buttons</li>
-                  <li>Your answers are saved automatically</li>
-                  <li>Click "Finish Quiz" when you're ready to submit</li>
-                  <li>You'll see detailed explanations after completing the quiz</li>
-                </ul>
-              </div>
-
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-                <Button
-                  variant="outline"
-                  onClick={onExit}
-                  className="w-full sm:flex-1 border-neutral-700 text-white hover:bg-neutral-800 bg-transparent"
-                >
-                  Cancel
-                </Button>
                 <Button
                   onClick={handleStartQuiz}
                   className="w-full sm:flex-1 bg-[#7c3aed] hover:bg-[#7c3aed]/80 text-white"
@@ -220,9 +183,8 @@ export function QuizRunner({ quiz, onComplete, onExit }: QuizRunnerProps) {
     return (
       <div className="min-h-screen bg-[#0e0e0e]">
         <header className="sticky top-0 z-40 border-b border-neutral-800 bg-[#0e0e0e]/80 backdrop-blur-sm">
-          <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-[18px]">
             <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-              <SidebarTrigger className="text-white hover:text-[#7c3aed] flex-shrink-0" />
               <div className="flex items-center gap-2 sm:gap-4 min-w-0">
                 <h1 className="text-lg sm:text-xl font-semibold truncate">Quiz Results</h1>
               </div>
@@ -341,19 +303,14 @@ export function QuizRunner({ quiz, onComplete, onExit }: QuizRunnerProps) {
   return (
     <div className="min-h-screen bg-[#0e0e0e]">
       <header className="sticky top-0 z-40 border-b border-neutral-800 bg-[#0e0e0e]/80 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-[18px]">
           <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-            <SidebarTrigger className="text-white hover:text-[#7c3aed] flex-shrink-0" />
+
             <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-              <h1 className="text-lg sm:text-xl font-semibold truncate">{quiz.title}</h1>
-              <Badge className={`text-white ${getDifficultyColor(quiz.difficulty)}`}>{quiz.difficulty}</Badge>
-            </div>
+              <h1 className="text-lg sm:text-xl font-semibold truncate">{quiz.title}</h1>            </div>
           </div>
           <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-            <div className="flex items-center gap-2 text-white">
-              <Clock className="w-4 h-4" />
-              <span className="font-mono">{formatTime(timeLeft)}</span>
-            </div>
+
             <Button variant="ghost" size="icon" onClick={onExit} className="text-white hover:text-[#7c3aed]">
               <X className="w-5 h-5" />
             </Button>
