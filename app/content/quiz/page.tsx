@@ -348,7 +348,6 @@ export default function QuizPage() {
           <div className="mb-6 lg:mb-8">
             <div className="flex items-center gap-3 mb-2">
               <h1 className="text-2xl lg:text-3xl font-bold text-foreground">React Quizzes</h1>
-              <Badge className="bg-primary text-primary-foreground">New</Badge>
             </div>
             <p className="text-muted-foreground">Challenge yourself and test your React knowledge</p>
           </div>

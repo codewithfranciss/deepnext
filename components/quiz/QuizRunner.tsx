@@ -3,10 +3,8 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-
-import { X, Clock, CheckCircle, XCircle, Trophy, RotateCcw, ArrowRight, ArrowLeft } from "lucide-react"
+import { X,  CheckCircle, XCircle, Trophy, RotateCcw, ArrowRight, ArrowLeft } from "lucide-react"
 
 interface Question {
   id: number
