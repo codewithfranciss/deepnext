@@ -44,7 +44,6 @@ export function QuizRunner({ quiz, onComplete, onExit }: QuizRunnerProps) {
   const totalQuestions = quiz.quizData.questions.length
   const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100
 
-  // Timer effect
   useEffect(() => {
     if (!quizStarted || showResults) return
 
