@@ -370,10 +370,6 @@ export default function QuizPage() {
                           {quiz.questions} questions
                         </div>
                         <div className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          {quiz.duration}
-                        </div>
-                        <div className="flex items-center gap-1">
                           <Users className="w-4 h-4" />
                           {quiz.participants.toLocaleString()} taken
                         </div>
