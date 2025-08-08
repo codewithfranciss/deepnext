@@ -24,7 +24,7 @@ export default function HostingPage() {
         <div className="mb-8 lg:mb-12 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <Server className="w-4 h-4" />
-            React Hosting Solutions
+           Hosting Solutions
           </div>
           <h1 className="text-3xl lg:text-5xl font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent mb-4">
             Deploy React Apps Effortlessly
