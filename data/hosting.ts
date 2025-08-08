@@ -80,6 +80,34 @@
       url: "https://aws.amazon.com/amplify",
       logo: "https://avatars.githubusercontent.com/u/41077760?s=200&v=4",
     },
+    {
+      id: 7,
+      name: "Pxxl app",
+      description:
+        "Pxxl App is a powerful cloud deployment platform that enables developers to deploy websites, APIs, and databases instantly with zero configuration, providing seamless scaling, high performance, and real-time team collaboration.",
+      category: "JAMstack",
+      url: "https://pxxl.app/",
+      logo: "https://pxxl.app/images/col-logo.svg",
+    },
+    {
+      id: 8,
+      name: "Sevalla",
+      description:
+        "Sevalla is the home to your upcoming projects. Host and manage your applications, databases, and static sites in a single, intuitive platform.",
+      category: "JAMstack",
+      url: "http://sevalla.com/",
+      logo: "https://avatars.githubusercontent.com/u/177742723?s=200&v=4",
+    },
+    {
+      id: 9,
+      name: "Koyeb",
+      description:
+        "Koyeb is a Platform-as-a-Service (PaaS) that enables developers to deploy their apps quickly and without complex infrastructure to manage. ",
+      category: "PaaS",
+      url: "https://koyeb.com/",
+      logo: "https://getdeploying.com/static/img/logos/koyeb.bcad056012d6.png",
+    },
+    
   ]
 
   export default hostingProviders
