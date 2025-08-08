@@ -76,7 +76,10 @@ export default function HostingPage() {
             >
               <CardHeader className="pb-4">
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="text-2xl">{provider.logo}</span>
+                <img
+                    src={provider.logo}
+                    alt={`${provider.name} logo`}
+                 className="w-10 h-10 rounded-md object-contain p-1"/>
                   <Badge variant="outline" className="border-neutral-700 text-neutral-400 text-xs">
                     {provider.category}
                   </Badge>
@@ -90,10 +93,6 @@ export default function HostingPage() {
               </CardHeader>
               <CardContent className="pt-0">
                 <div className="space-y-4">
-
-
-
-
                   <Button
                     className="w-full bg-secondary hover:from-[#6d28d9] hover:to-primary text-white rounded-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25 font-medium"
                     asChild

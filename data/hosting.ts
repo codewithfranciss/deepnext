@@ -11,7 +11,7 @@
       performance: "Excellent",
       support: "24/7",
       url: "https://vercel.com",
-      logo: "▲",
+      logo: "https://avatars.githubusercontent.com/u/14985020?s=48&v=4",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@
       performance: "Excellent",
       support: "Community + Paid",
       url: "https://netlify.com",
-      logo: "🌐",
+      logo: "https://avatars.githubusercontent.com/u/7892489?s=200&v=4",
     },
     {
       id: 3,
@@ -39,7 +39,7 @@
       performance: "Very Good",
       support: "24/7",
       url: "https://digitalocean.com",
-      logo: "🌊",
+      logo: "https://avatars.githubusercontent.com/u/4650108?s=200&v=4",
     },
     {
       id: 4,
@@ -52,7 +52,7 @@
       performance: "Good",
       support: "Community",
       url: "https://railway.app",
-      logo: "🚂",
+      logo: "https://avatars.githubusercontent.com/u/66716858?s=200&v=4",
     },
     {
       id: 5,
