@@ -107,6 +107,24 @@
       url: "https://koyeb.com/",
       logo: "https://getdeploying.com/static/img/logos/koyeb.bcad056012d6.png",
     },
+    {
+      id: 10,
+      name: "Cloudfare",
+      description:
+        "Cloudflare is a cloud provider focused on edge networks, caching, security and performance. Founded in 2009, it started with the mission to help secure and speed up the internet.",
+      category: "Cloud",
+      url: "https://cloudflare.com/",
+      logo: "https://getdeploying.com/static/img/logos/cloudflare.c80460c2ba85.png",
+    },
+    {
+      id: 11,
+      name: "Flexstack",
+      description:
+        "FlexStack enables you to deploy to AWS with a Vercel-like experience. You can set up a complete environment in just a few clicks - everything from secrets to monitoring to load balancing and autoscaling is managed for you.",
+      category: "Cloud",
+      url: "https://flexstack.com/",
+      logo: "https://getdeploying.com/static/img/logos/flexstack.154a86a24602.png",
+    },
     
   ]
 
