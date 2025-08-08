@@ -65,7 +65,7 @@
       performance: "Good",
       support: "Email + Community",
       url: "https://render.com",
-      logo: "🚀",
+      logo: "https://avatars.githubusercontent.com/u/36424661?s=200&v=4",
     },
     {
       id: 6,
@@ -78,7 +78,7 @@
       performance: "Excellent",
       support: "24/7 Premium",
       url: "https://aws.amazon.com/amplify",
-      logo: "☁️",
+      logo: "https://avatars.githubusercontent.com/u/41077760?s=200&v=4",
     },
   ]
 
